@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: 'Sora', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: theme('colors.paper');
+    background-image:
+      radial-gradient(circle at 10% -6%, rgba(93, 95, 239, 0.14), transparent 42%),
+      radial-gradient(circle at 96% 8%, rgba(245, 185, 77, 0.16), transparent 40%),
+      radial-gradient(rgba(93, 95, 239, 0.16) 1px, transparent 1px);
+    background-size: auto, auto, 24px 24px;
+    background-position: 0 0, 0 0, 0 0;
+    background-attachment: fixed, fixed, fixed;
+    background-repeat: no-repeat, no-repeat, repeat;
+  }
+
+  .dark body {
+    background-color: theme('colors.ink');
+    background-image:
+      radial-gradient(circle at 8% -4%, rgba(93, 95, 239, 0.20), transparent 42%),
+      radial-gradient(circle at 96% 10%, rgba(245, 185, 77, 0.10), transparent 40%),
+      radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: auto, auto, 24px 24px;
+  }
+
+  /* Slim, unobtrusive scrollbar site-wide */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(93, 95, 239, 0.3);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(93, 95, 239, 0.55);
+  }
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(93, 95, 239, 0.35) transparent;
+  }
+}
+
+@layer components {
+  /* Primary card surface — clearly distinct from the page background in
+     both themes without going full-white or full-black. */
+  .card-surface {
+    @apply bg-paperraised dark:bg-inkraised border border-slate-900/[0.06] dark:border-white/10 shadow-card;
+  }
+
+  .surface-alt {
+    @apply bg-paperalt dark:bg-inkalt border border-slate-900/[0.06] dark:border-white/10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-brand-500 text-white text-sm font-semibold hover:bg-brand-600 active:bg-brand-700 transition-colors shadow-[0_6px_16px_-6px_rgba(93,95,239,0.55)];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-slate-900/15 dark:border-white/15 text-slate-700 dark:text-slate-200 text-sm font-semibold hover:bg-slate-900/5 dark:hover:bg-white/5 transition-colors;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl border border-slate-900/10 dark:border-white/10 bg-paperraised dark:bg-inkraised text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-brand-500 dark:focus:border-brand-400 outline-none transition-colors;
+  }
+
+  .badge {
+    @apply inline-flex items-center text-[11px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Graph-paper texture used sparingly for academic-feeling panels */
+  .bg-graph {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+::selection {
+  background-color: #5D5FEF;
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid #5D5FEF;
+  outline-offset: 2px;
+}
