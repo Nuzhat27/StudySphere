@@ -1,7 +1,15 @@
-
 # 📚 StudySphere — MERN Stack SaaS Learning Platform
 
 A multi-user learning platform with JWT auth, role-based access control (Student / Educator / Admin), course + lesson management, file/video uploads, quizzes with auto-grading, lesson discussions, email notifications, and a dark/light themed React frontend.
+
+Free, all-in-one MERN learning platform for universities — semester-organized courses, lessons with auto-graded quizzes, doubts answered by faculty, deadline-tracked assignments, and chapter-wise notes/PYQs.
+
+## 🔗 Live Demo
+
+- **App:** [study-sphere-pink.vercel.app](https://study-sphere-pink.vercel.app/)
+- **Latest deployment:** [study-sphere-mj5nx62l0-nuzhat27s-projects.vercel.app](https://vercel.com/nuzhat27s-projects/study-sphere/CmE3VYn5QKFJ7HZLST1rsNQiUhgE)
+
+> **Note:** the backend is hosted on Render's free tier, so it spins down after periods of inactivity. The first request after idle time may take 30–60 seconds to respond while the server wakes up.
 
 ## Tech Stack
 `React` `Node.js` `Express.js` `MongoDB` `JWT` `RBAC` `Cloudinary` `Nodemailer` `Tailwind CSS`
@@ -62,8 +70,8 @@ Sign up at cloudinary.com, grab your cloud name, API key, and API secret from th
 For Gmail: enable 2FA and generate an "App Password" — use that as `EMAIL_PASS`. Alternatively use a transactional provider like Mailtrap (for testing) or SendGrid.
 
 ## Deployment
-- **Backend** → Render / Railway (Node web service). Set the same env vars as `.env`, set `CLIENT_URL` to your deployed frontend URL for CORS.
-- **Frontend** → Vercel / Netlify. Set `VITE_API_URL` to your deployed backend's `/api` URL.
+- **Backend** → Render (Node web service). Set the same env vars as `.env`, set `CLIENT_URL` to your deployed frontend URL for CORS.
+- **Frontend** → Vercel. Set `VITE_API_URL` to your deployed backend's `/api` URL (e.g. `https://your-backend.onrender.com/api`).
 - **Database** → MongoDB Atlas (already cloud-hosted, no extra deployment needed).
 - **File storage** → Cloudinary (already cloud-hosted).
 
@@ -82,7 +90,3 @@ Public registration only allows `student` or `educator`. To get an admin:
 | Quizzes | `/api/quizzes` (create, fetch, submit) |
 | Comments | `/api/comments` (per lesson) |
 | Admin | `/api/admin` (users, course review, platform stats) |
-=======
-# StudySphere
-Free, all-in-one MERN learning platform for universities — semester-organized courses, lessons with auto-graded quizzes, doubts answered by faculty, deadline-tracked assignments, and chapter-wise notes/PYQs. Built with React, Node/Express, and MongoDB.
-
