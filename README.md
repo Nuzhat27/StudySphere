@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 📚 StudySphere — MERN Stack SaaS Learning Platform
 
 A multi-user learning platform with JWT auth, role-based access control (Student / Educator / Admin), course + lesson management, file/video uploads, quizzes with auto-grading, lesson discussions, email notifications, and a dark/light themed React frontend.
@@ -85,4 +85,4 @@ Public registration only allows `student` or `educator`. To get an admin:
 =======
 # StudySphere
 Free, all-in-one MERN learning platform for universities — semester-organized courses, lessons with auto-graded quizzes, doubts answered by faculty, deadline-tracked assignments, and chapter-wise notes/PYQs. Built with React, Node/Express, and MongoDB.
->>>>>>> dca8234b55e3d43590c563f1c8b483f9c626d095
+
